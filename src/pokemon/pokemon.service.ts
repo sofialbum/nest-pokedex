@@ -46,6 +46,8 @@ export class PokemonService {
 
   findAll( paginationDto: PaginationDto) {
 
+    console.log(process.env.MONGODB)
+
     const { limit = this.defaultLimit, offset = 0 } = paginationDto;
     return this.pokemonModel.find()
       .limit( limit )
